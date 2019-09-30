@@ -28,24 +28,25 @@ button.equal {
 
 button.item-display {
     cursor: none;
-    text-align: right;
     font-size: 38px;
-}
-
-button.numbers {
-    background-color: orange;
-}
-
-button.symbols {
-    background-color: lightsalmon;
-}
-
-.item-display {
+    padding-right: 20px;
+    text-align: right;
     background-color: lightsteelblue;
+    box-shadow: 20px 20px 50px 10px slategray inset;
     grid-area: screen;
     grid-row-start: 1;
     grid-row-end: 1;
     text-align: right;
+    
+}
+
+button.numbers {
+    background-color: orange;
+    box-shadow: 20px 20px 50px 10px rgb(243, 119, 74) inset;
+}
+
+button.symbols {
+    background-color: lightsalmon;
 }
 
 div.calculator {
@@ -61,7 +62,7 @@ div.calculator {
 }
 
 div.calculator-container {
-    background-image:radial-gradient(rgb(46, 45, 45), black);
+    background-color: silver;
     border-radius: 10px;
     box-shadow: 20px 20px 10px grey;
     display: grid;
