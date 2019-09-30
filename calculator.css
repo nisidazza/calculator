@@ -1,0 +1,79 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+button.btn {
+    border-radius: 10px;
+    color: white;
+    display: inline-block;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 4px 4px;
+    text-align: center;
+}
+
+button.cancel {
+    background-color: rosybrown;
+}
+
+button.equal {
+    background-color: lightseagreen;
+}
+
+button.item-display {
+    cursor: none;
+    text-align: right;
+    font-size: 38px;
+}
+
+button.numbers {
+    background-color: orange;
+}
+
+button.symbols {
+    background-color: lightsalmon;
+}
+
+.item-display {
+    background-color: lightsteelblue;
+    grid-area: screen;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    text-align: right;
+}
+
+div.calculator {
+    display: flex;
+    height: 500px;
+    justify-content: center;
+    left: 50%;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+}
+
+div.calculator-container {
+    background-image:radial-gradient(rgb(46, 45, 45), black);
+    border-radius: 10px;
+    box-shadow: 20px 20px 10px grey;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 80px 80px 80px 80px;
+    grid-template-rows: 80px 80px;
+    grid-template-areas: 
+    "screen screen screen screen" 
+    "main main main main" 
+    "main main main main" 
+    "main main main main" 
+    "main main main main" 
+    "main main main main";
+    padding: 30px;
+}
