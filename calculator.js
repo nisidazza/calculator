@@ -1,4 +1,19 @@
-// Create an entries array empty, var tot set to zero
+// Create an entries array empty, current value display and pending value
+var entriesArr = [];
+var currentVal = 0;
+var onHoldVal;
+
+//create selectors
+var clear = document.getElementById("clear");
+var displayValues = document.getElementById("displayValues");
+var decimal = document.getElementById("decimal");
+var btnNumbers = document.getElementsByClassName("btn-numbers");
+var btnOperators = document.getElementsByClassName("btn-operator");
+
+
+
+
+
 // create var temp that is an empty string
 // when the button is clicked, the input is assign to a variable val
 //the value of val is a number or a decimal point, it is added to variable temp and display 
