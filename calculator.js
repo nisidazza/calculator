@@ -6,9 +6,10 @@
 const calculator = {
     entries : [],
     initValue: "0",
+    onHoldValue
 }
 
-// create variable that will hold the number
+// create variable that will hold the number entered first
 
 
 
@@ -23,10 +24,31 @@ const btnOperators = document.getElementById("btn-operator");
 
 
 //when I click a button I want the value displayed on the screen
+//eventListener for all the button numbers
+for(let i = 0; i < btnNumbers.length; i++) {
+    btnNumbers[i].addEventListener("click", //function)
+}
+//eventListener for all the button operators
+for(let i = 0; btnOperators.lenght; i++) {
+    btnOperators.addEventListener("click", //function)
+}
 
-// when the button is clicked, the input is assign to a variable val
-//the value of val is a number or a decimal point, it is added to variable temp and display 
-//to screen (max 10 characters)
+//create a function to update the value display on the screen when a button is clicked
+// when the button is clicked, the input is assign to a variable 
+//check inside the function if the display value is 0 or not. If yes, it has to be set to 0
+function displayEnteredValue(e) {
+    var btnContent = e.target.innerText;
+    if(initValue === "0") {
+        initValue = "";
+    }
+}
+//add the content of btnContent to initValue and display it
+    initValue += btnContent;
+    displayValues.innerText = initValue;
+
+
+
+
 // Got a number, add to temp
 // Got some symbol other than equals, add temp to our entries
 // then add our current symbol and clear temp
