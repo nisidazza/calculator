@@ -15,6 +15,7 @@ button.btn {
     font-size: 22px;
     font-weight: bold;
     margin: 4px 4px;
+    outline: none;
     text-align: center;
 }
 
