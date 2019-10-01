@@ -26,8 +26,7 @@ button.equal {
     background-color: lightseagreen;
 }
 
-button.item-display {
-    cursor: none;
+.item-display {
     font-size: 38px;
     padding-right: 20px;
     text-align: right;
