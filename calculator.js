@@ -3,10 +3,20 @@
 
 const calculator = {
     entries : [],
-    valDisplay: "0",
+    initValue: 0,
 }
 
-//when I click a button I want the value display on the screen
+//Selectors
+const decimal = document.getElementById("decimal");
+const clear = document.getElementById("clear");
+const clearLastEntry = document.getElementById("clearLastEntry");
+const displayValues = document.getElementById("displayValues");
+const btnNumbers = document.getElementsByClassName("numbers");
+const btnOperators = document.getElementById("btn-operator");
+
+
+
+//when I click a button I want the value displayed on the screen
 // when the button is clicked, the input is assign to a variable val
 //the value of val is a number or a decimal point, it is added to variable temp and display 
 //to screen (max 10 characters)
