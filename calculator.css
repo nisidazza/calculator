@@ -19,7 +19,8 @@ button.btn {
     text-align: center;
 }
 
-button.cancel {
+button#clear,
+button#clearLastEntry{
     background-color: rosybrown;
 }
 
@@ -40,12 +41,12 @@ button.equal {
     
 }
 
-button.numbers {
+button.btn-number {
     background-color: orange;
     box-shadow: 20px 20px 50px 10px rgb(243, 119, 74) inset;
 }
 
-button.symbols {
+button.btn-operator {
     background-color: lightsalmon;
 }
 
