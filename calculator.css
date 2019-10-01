@@ -20,7 +20,8 @@ button.btn {
 }
 
 button#clear,
-button#clearLastEntry{
+button#clearLastEntry
+{
     background-color: rosybrown;
 }
 
