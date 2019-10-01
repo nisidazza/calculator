@@ -1,5 +1,12 @@
-// Create an entries array empty, var tot set to zero
+// Create a calculator object that contain: entries array empty, var tot set to zero
 // create var temp that is an empty string
+
+const calculator = {
+    entries : [],
+    valDisplay: "0",
+}
+
+//when I click a button I want the value display on the screen
 // when the button is clicked, the input is assign to a variable val
 //the value of val is a number or a decimal point, it is added to variable temp and display 
 //to screen (max 10 characters)
