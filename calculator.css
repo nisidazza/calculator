@@ -8,6 +8,7 @@ body {
     text-align: center;
 }
 
+
 button.btn {
     border-radius: 10px;
     color: white;
@@ -19,27 +20,26 @@ button.btn {
     text-align: center;
 }
 
-button.btn-clear,
-button.btn-clearLastEntry
+button#clear,
+button#clearLastEntry
 {
     background-color: rosybrown;
 }
 
-button.equal {
+button#equals {
     background-color: lightseagreen;
 }
 
 #displayValues{
     font-size: 50px;
     margin-top: 0px;
-    margin-bottom: 20px;
-    padding-right: 10px;
+    margin-bottom: 50px;
+    padding-right: 20px;
+    padding-top: 15px;
     text-align: right;
     background-color: lightsteelblue;
     box-shadow: 20px 20px 50px 10px slategray inset;
     grid-area: screen;
-    grid-row-start: 1;
-    grid-row-end: 1;
 }
 
 button.btn-number {
@@ -53,14 +53,12 @@ button.btn-operator {
 
 div.calculator {
     display: flex;
-    height: 500px;
+    height: 520px;
     justify-content: center;
     left: 50%;
-    padding: 20px;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 350px;
 }
 
 div.calculator-container {
@@ -72,6 +70,7 @@ div.calculator-container {
     grid-template-columns: 80px 80px 80px 80px;
     grid-template-rows: 80px 80px;
     grid-template-areas: 
+    "screen screen screen screen"
     "screen screen screen screen" 
     "main main main main" 
     "main main main main" 
