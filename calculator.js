@@ -37,7 +37,7 @@ function performOperation(e) {
     switch (operator) {
         case "+":
             onHoldVal = currentVal;
-            currentVal = "0";
+            currentVal = "";
             displayValues.innerText = currentVal;
             entriesArr.push(onHoldVal);
             entriesArr.push("+");
@@ -45,7 +45,7 @@ function performOperation(e) {
 
         case "-":
             onHoldVal = currentVal;
-            currentVal = "0";
+            currentVal = "";
             displayValues.innerText = currentVal;
             entriesArr.push(onHoldVal);
             entriesArr.push("-");
@@ -53,7 +53,7 @@ function performOperation(e) {
 
         case "x":
             onHoldVal = currentVal;
-            currentVal = "0";
+            currentVal = "";
             displayValues.innerText = currentVal;
             entriesArr.push(onHoldVal);
             entriesArr.push("*");
@@ -61,7 +61,7 @@ function performOperation(e) {
 
         case "÷":
             onHoldVal = currentVal;
-            currentVal = "0";
+            currentVal = "";
             displayValues.innerText = currentVal;
             entriesArr.push(onHoldVal);
             entriesArr.push("/");

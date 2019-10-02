@@ -8,32 +8,40 @@ body {
     text-align: center;
 }
 
-
 button.btn {
     border-radius: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     color: white;
+    cursor: pointer;
     display: inline-block;
     font-size: 22px;
+    font-family: "Orbitron";
     font-weight: bold;
     margin: 4px 4px;
     outline: none;
     text-align: center;
 }
 
-button#clear,
-button#clearLastEntry
-{
+button#clearLastEntry {
+    background-color: rgb(124, 77, 77);
+}
+
+button#clear {
     background-color: rosybrown;
+    grid-column: 1 / span 2;
 }
 
 button#equals {
     background-color: lightseagreen;
+    grid-column: 2 / span 2;
 }
 
 #displayValues{
+    border: 0.5px solid rgb(147, 168, 189);
     font-size: 50px;
-    margin-top: 0px;
-    margin-bottom: 50px;
+    font-family: "Orbitron";
+    margin-top: 20px;
+    margin-bottom: 45px;
     padding-right: 20px;
     padding-top: 15px;
     text-align: right;
@@ -43,8 +51,8 @@ button#equals {
 }
 
 button.btn-number {
-    background-color: orange;
-    box-shadow: 20px 20px 50px 10px rgb(243, 119, 74) inset;
+    background-color: rgb(236, 232, 228);
+    box-shadow: 20px 20px 50px 10px rgb(248, 114, 5) inset;
 }
 
 button.btn-operator {
@@ -62,7 +70,8 @@ div.calculator {
 }
 
 div.calculator-container {
-    background-color: silver;
+    background-color:rgb(175, 174, 174);
+    border: 0.5px dotted grey;
     border-radius: 10px;
     box-shadow: 20px 20px 10px grey;
     display: grid;
