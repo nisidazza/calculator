@@ -19,7 +19,7 @@ button.btn {
     text-align: center;
 }
 
-input.btn-clear,
+button.btn-clear,
 button.btn-clearLastEntry
 {
     background-color: rosybrown;
