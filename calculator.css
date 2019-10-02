@@ -19,8 +19,8 @@ button.btn {
     text-align: center;
 }
 
-button#clear,
-button#clearLastEntry
+input.btn-clear,
+button.btn-clearLastEntry
 {
     background-color: rosybrown;
 }
@@ -29,17 +29,17 @@ button.equal {
     background-color: lightseagreen;
 }
 
-.item-display {
-    font-size: 38px;
-    padding-right: 20px;
+#displayValues{
+    font-size: 50px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    padding-right: 10px;
     text-align: right;
     background-color: lightsteelblue;
     box-shadow: 20px 20px 50px 10px slategray inset;
     grid-area: screen;
     grid-row-start: 1;
     grid-row-end: 1;
-    text-align: right;
-    
 }
 
 button.btn-number {
@@ -80,3 +80,4 @@ div.calculator-container {
     "main main main main";
     padding: 30px;
 }
+

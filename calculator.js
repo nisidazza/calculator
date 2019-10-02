@@ -1,22 +1,27 @@
 // Create an entries array empty, current value display and pending value
 var entriesArr = [];
 var currentVal = 0;
-var onHoldVal;
+var onHoldVal= "";
 
 //create selectors
-var clear = document.getElementById("clear");
+/*var clear = document.getElementById("clear");
 var displayValues = document.getElementById("displayValues");
 var decimal = document.getElementById("decimal");
 var btnNumbers = document.getElementsByClassName("btn-number");
-var btnOperators = document.getElementsByClassName("btn-operator");
+var btnOperators = document.getElementsByClassName("btn-operator");*/
 
 // when the button is clicked, the input is assign to a variable val
 //the value of val is a number or a decimal point, it is added to variable temp and display 
 //to screen (max 10 characters)
-
 //Use event target(returns the element that triggered the event) to find the content of a button.
-function updateDisplayValue(e) {
-    var btnContent = e.target.value;
+function myFunction() {
+    var x = document.getElementById("7").getAttribute("value");
+    document.getElementById("displayValues").innerHTML = x;
+}
+
+
+/*function updateDisplayValue(e) {
+    var btnContent = displayValues
     //Create if statement inside this function that will check if the display value is currently 0 or not. 
     //If yes, set it to an empty string
     if(currentVal === "0") {
@@ -24,8 +29,8 @@ function updateDisplayValue(e) {
     }
     //add the content of btnContent to currentVal
     currentVal += btnContent;
-    displayValues.innerText = currentVal;
-}
+    displayValues.innerText = currentVal;*/
+
 // Got a number, add to temp
 // Got some symbol other than equals, add temp to our entries
 // then add our current symbol and clear temp
@@ -41,16 +46,6 @@ function updateDisplayValue(e) {
 // Swap the '-' symbol so text input handles it correctly
 // Push number
 // the calculation is performed once the equal button is pressed and the result is displayed on the screen
-function performOperation() {}
-  var operator = e.target.value;
-  
-  switch(operator) {
-      case "+": {
-
-      }
-  }
-
-
 //create event listener for buttons:
 // numbers 
 for(var i=0; i<btnNumbers.length; i++) {
