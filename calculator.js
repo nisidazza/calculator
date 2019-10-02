@@ -110,10 +110,10 @@ decimal.onclick = () => {
 }
 
 //create a function that deletes the last entry
-/*clearLastEntry.onclick = () => {
-    currentVal = displayValues.substr(0, currentVal.length - 1);
+clearLastEntry.onclick = () => {
+    currentVal = entriesArr.slice(0, currentVal.length - 1);
     displayValues.innerHTML = currentVal;
-}*/
+}
 
 
 
