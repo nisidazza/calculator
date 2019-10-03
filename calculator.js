@@ -111,7 +111,10 @@ decimal.onclick = () => {
 
 //create a function that deletes the last entry
 clearLastEntry.onclick = () => {
-    currentVal = entriesArr.slice(0, currentVal.length - 1);
+    currentVal = currentVal.slice(0, currentVal.length - 1);
+    if (currentVal === "") {
+        currentVal = "0";
+    }
     displayValues.innerHTML = currentVal;
 }
 
