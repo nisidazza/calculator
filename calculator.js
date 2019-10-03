@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', init);
 // Create an entries array empty, current value display and pending value
 var entriesArr = [];
 var currentVal = "0";
-
+const maxLength = 10;
 
 //create selectors
 var clear = document.getElementById("clear");
@@ -43,6 +43,7 @@ function init() {
 
     //create a function to insert decimal point
     function insertDecimalPoint() {
+        if(currentVal.length >= maxLength) return;
         if (currentVal.includes(".") === false) {
             currentVal += ".";
         }
@@ -60,6 +61,7 @@ function init() {
 }
 
 function updateDisplayValue(e) {
+    if(currentVal.length >= maxLength) return;
     var btnContent = e.target.innerText;
     //Create if statement inside this function that will check if the display value is currently 0 or not. 
     //If yes, set it to an empty string
@@ -76,6 +78,9 @@ function performCalculation(e) {
     //with "join" the array becomes a string and  we pass it to the eval()
     var evaluateArgument = eval(entriesArr.join(" "));
     currentVal = evaluateArgument + "";
+    if(currentVal.length>maxLength){
+        currentVal = evaluateArgument.toExponential(maxLength - 6);
+    }
     console.log(typeof currentVal);
     displayValues.innerText = currentVal;
     entriesArr = []; //clear the array for new input
