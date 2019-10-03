@@ -73,7 +73,7 @@ function updateDisplayValue(e) {
 
 function performCalculation(e) {
     entriesArr.push(currentVal);
-    //with "join the array becomes a string" and  we pass it to the eval()
+    //with "join" the array becomes a string and  we pass it to the eval()
     var evaluateArgument = eval(entriesArr.join(" "));
     currentVal = evaluateArgument + "";
     console.log(typeof currentVal);
