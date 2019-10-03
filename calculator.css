@@ -6,6 +6,9 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
+    background-image: url("images/random-numbers-symbols.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;    
 }
 
 button.btn {
