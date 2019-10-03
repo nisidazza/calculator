@@ -34,7 +34,7 @@ function init() {
     clearLastEntry.onclick = deleteLastEntry;
 
     //create function to clear display
-     function clearDisplay() {
+    function clearDisplay() {
         currentVal = "0";
         onHoldVal = undefined;
         entriesArr = [];
@@ -43,7 +43,7 @@ function init() {
 
     //create a function to insert decimal point
     function insertDecimalPoint() {
-        if(currentVal.length >= maxLength) return;
+        if (currentVal.length >= maxLength) return;
         if (currentVal.includes(".") === false) {
             currentVal += ".";
         }
@@ -61,7 +61,7 @@ function init() {
 }
 
 function updateDisplayValue(e) {
-    if(currentVal.length >= maxLength) return;
+    if (currentVal.length >= maxLength) return;
     var btnContent = e.target.innerText;
     //Create if statement inside this function that will check if the display value is currently 0 or not. 
     //If yes, set it to an empty string
@@ -78,7 +78,7 @@ function performCalculation(e) {
     //with "join" the array becomes a string and  we pass it to the eval()
     var evaluateArgument = eval(entriesArr.join(" "));
     currentVal = evaluateArgument + "";
-    if(currentVal.length>maxLength){
+    if (currentVal.length > maxLength) {
         currentVal = evaluateArgument.toExponential(maxLength - 6);
     }
     console.log(typeof currentVal);
