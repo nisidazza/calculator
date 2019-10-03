@@ -1,7 +1,7 @@
 // Create an entries array empty, current value display and pending value
 var entriesArr = [];
 var currentVal = "0";
-var onHoldVal;
+
 
 //create selectors
 var clear = document.getElementById("clear");
@@ -36,34 +36,22 @@ function performOperation(e) {
     //check witch operator is typed
     switch (operator) {
         case "+":
-            onHoldVal = currentVal;
-            currentVal = "";
-            displayValues.innerText = currentVal;
-            entriesArr.push(onHoldVal);
+            storeCurrentValue();
             entriesArr.push("+");
             break;
 
         case "-":
-            onHoldVal = currentVal;
-            currentVal = "";
-            displayValues.innerText = currentVal;
-            entriesArr.push(onHoldVal);
+            storeCurrentValue();
             entriesArr.push("-");
             break;
 
-        case "x":
-            onHoldVal = currentVal;
-            currentVal = "";
-            displayValues.innerText = currentVal;
-            entriesArr.push(onHoldVal);
+        case "*":
+            storeCurrentValue();
             entriesArr.push("*");
             break;
 
         case "÷":
-            onHoldVal = currentVal;
-            currentVal = "";
-            displayValues.innerText = currentVal;
-            entriesArr.push(onHoldVal);
+            storeCurrentValue();
             entriesArr.push("/");
             break;
 
@@ -79,6 +67,13 @@ function performOperation(e) {
         default:
             break;
     }
+}
+
+function storeCurrentValue() {
+    var onHoldVal = currentVal;
+    currentVal = "";
+    displayValues.innerText = currentVal;
+    entriesArr.push(onHoldVal);
 }
 
 // the calculation is performed once the equal button is pressed and the result is displayed on the screen
