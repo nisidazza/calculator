@@ -10,6 +10,7 @@ var clear = document.getElementById("clear");
 var clearLastEntry = document.getElementById("clearLastEntry");
 var displayValues = document.getElementById("displayValues");
 var decimal = document.getElementById("decimal");
+var equals = document.getElementById("equals");
 var btnNumbers = document.getElementsByClassName("btn-number");
 var btnOperators = document.getElementsByClassName("btn-operator");
 
@@ -24,8 +25,10 @@ function init() {
     }
     //operators
     for (var i = 0; i < btnOperators.length; i++) {
-        btnOperators[i].addEventListener("click", performOperation);
+        btnOperators[i].addEventListener("click", storeCurrentExpression);
     }
+
+    equals.onclick = performCalculation;
 
     //create function to clear display
     clear.onclick = () => {
@@ -65,54 +68,25 @@ function updateDisplayValue(e) {
     currentVal += btnContent;
     displayValues.innerText = currentVal;
 }
-// create function that performs operations
-//
-function performOperation(e) {
-    var operator = e.target.innerText; //check content of operator
-    //check witch operator is typed
-    switch (operator) {
-        case "+":
-            storeCurrentValue();
-            entriesArr.push("+");
-            break;
 
-        case "-":
-            storeCurrentValue();
-            entriesArr.push("-");
-            break;
-
-        case "*":
-            storeCurrentValue();
-            entriesArr.push("*");
-            break;
-
-        case "÷":
-            storeCurrentValue();
-            entriesArr.push("/");
-            break;
-
-        case "=":
-            entriesArr.push(currentVal);
-            //with "join the array becomes a string" and  we pass it to the eval()
-            var evaluateArgument = eval(entriesArr.join(" "));
-            currentVal = evaluateArgument + "";
-            console.log(typeof currentVal);
-            displayValues.innerText = currentVal;
-            entriesArr = []; //clear the array for new input
-            break;
-        default:
-            break;
-    }
+function performCalculation(e) {
+    entriesArr.push(currentVal);
+    //with "join the array becomes a string" and  we pass it to the eval()
+    var evaluateArgument = eval(entriesArr.join(" "));
+    currentVal = evaluateArgument + "";
+    console.log(typeof currentVal);
+    displayValues.innerText = currentVal;
+    entriesArr = []; //clear the array for new input
 }
 
-function storeCurrentValue() {
+function storeCurrentExpression(e) {
+    var operator = e.target.value; //check content of operator
+    if (operator === "") {
+        return;
+    }
     var onHoldVal = currentVal;
     currentVal = "";
     displayValues.innerText = currentVal;
     entriesArr.push(onHoldVal);
+    entriesArr.push(operator);
 }
-
-
-
-
-
