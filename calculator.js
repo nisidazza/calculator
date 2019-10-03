@@ -1,3 +1,5 @@
+document.addEventListener('DOMContentLoaded', init);
+
 // Create an entries array empty, current value display and pending value
 var entriesArr = [];
 var currentVal = "0";
@@ -13,10 +15,44 @@ var btnOperators = document.getElementsByClassName("btn-operator");
 
 // when the button is clicked, the input is assign to a variable 
 //Use event target(returns the element that triggered the event) to find the content of a button.
-/*function myFunction() {
-    var x = document.getElementById("7").getAttribute("value");
-    document.getElementById("displayValues").innerHTML = x;
-}*/
+
+function init() {
+    //create event listener for buttons:
+    // numbers 
+    for (var i = 0; i < btnNumbers.length; i++) {
+        btnNumbers[i].addEventListener("click", updateDisplayValue);
+    }
+    //operators
+    for (var i = 0; i < btnOperators.length; i++) {
+        btnOperators[i].addEventListener("click", performOperation);
+    }
+
+    //create function to clear display
+    clear.onclick = () => {
+        currentVal = "0";
+        onHoldVal = undefined;
+        entriesArr = [];
+        displayValues.innerHTML = currentVal;
+    }
+
+    //create a function to insert decimal point
+    decimal.onclick = () => {
+        if (currentVal.includes(".") === false) {
+            currentVal += ".";
+        }
+
+        displayValues.innerText = currentVal;
+    }
+
+    //create a function that deletes the last entry
+    clearLastEntry.onclick = () => {
+        currentVal = currentVal.slice(0, currentVal.length - 1);
+        if (currentVal === "") {
+            currentVal = "0";
+        }
+        displayValues.innerHTML = currentVal;
+    }
+}
 
 function updateDisplayValue(e) {
     var btnContent = e.target.innerText;
@@ -75,44 +111,6 @@ function storeCurrentValue() {
     displayValues.innerText = currentVal;
     entriesArr.push(onHoldVal);
 }
-
-// the calculation is performed once the equal button is pressed and the result is displayed on the screen
-//create event listener for buttons:
-// numbers 
-for (var i = 0; i < btnNumbers.length; i++) {
-    btnNumbers[i].addEventListener("click", updateDisplayValue);
-}
-//operators
-for (var i = 0; i < btnOperators.length; i++) {
-    btnOperators[i].addEventListener("click", performOperation);
-}
-
-//create function to clear display
-clear.onclick = () => {
-    currentVal = "0";
-    onHoldVal = undefined;
-    entriesArr = [];
-    displayValues.innerHTML = currentVal;
-}
-
-//create a function to insert decimal point
-decimal.onclick = () => {
-    if(currentVal.includes(".") === false) {
-        currentVal += ".";
-    }
-
-    displayValues.innerText = currentVal;
-}
-
-//create a function that deletes the last entry
-clearLastEntry.onclick = () => {
-    currentVal = currentVal.slice(0, currentVal.length - 1);
-    if (currentVal === "") {
-        currentVal = "0";
-    }
-    displayValues.innerHTML = currentVal;
-}
-
 
 
 
