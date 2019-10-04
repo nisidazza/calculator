@@ -3,11 +3,13 @@ html {
 }
 
 body {
+    height: 100%;
     margin: 0;
+    overflow: scroll;
     padding: 0;
     text-align: center;
     background-image: url("images/random-numbers-symbols.jpg");
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-size: cover;    
 }
 
@@ -70,6 +72,7 @@ div.calculator {
     left: 50%;
     position: absolute;
     top: 50%;
+    bottom:50%;
     transform: translate(-50%, -50%);
 }
 
@@ -92,4 +95,5 @@ div.calculator-container {
     "main main main main";
     padding: 30px;
 }
+ 
 
