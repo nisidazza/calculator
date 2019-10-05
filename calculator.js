@@ -32,32 +32,32 @@ function init() {
     clear.onclick = clearDisplay;
     decimal.onclick = insertDecimalPoint;
     clearLastEntry.onclick = deleteLastEntry;
+}
 
-    //create function to clear display
-    function clearDisplay() {
+//create function to clear display
+function clearDisplay() {
+    currentVal = "0";
+    onHoldVal = undefined;
+    entriesArr = [];
+    displayValues.innerHTML = currentVal;
+}
+
+//create a function to insert decimal point
+function insertDecimalPoint() {
+    if (currentVal.length >= maxLength) return;
+    if (currentVal.includes(".") === false) {
+        currentVal += ".";
+    }
+    displayValues.innerText = currentVal;
+}
+
+//create a function that deletes the last entry
+function deleteLastEntry() {
+    currentVal = currentVal.slice(0, currentVal.length - 1);
+    if (currentVal === "") {
         currentVal = "0";
-        onHoldVal = undefined;
-        entriesArr = [];
-        displayValues.innerHTML = currentVal;
     }
-
-    //create a function to insert decimal point
-    function insertDecimalPoint() {
-        if (currentVal.length >= maxLength) return;
-        if (currentVal.includes(".") === false) {
-            currentVal += ".";
-        }
-        displayValues.innerText = currentVal;
-    }
-
-    //create a function that deletes the last entry
-    function deleteLastEntry() {
-        currentVal = currentVal.slice(0, currentVal.length - 1);
-        if (currentVal === "") {
-            currentVal = "0";
-        }
-        displayValues.innerHTML = currentVal;
-    }
+    displayValues.innerHTML = currentVal;
 }
 
 function updateDisplayValue(e) {
