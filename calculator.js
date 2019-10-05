@@ -21,17 +21,63 @@ function init() {
     //create event listener for buttons:
     // numbers 
     for (var i = 0; i < btnNumbers.length; i++) {
-        btnNumbers[i].addEventListener("click", updateDisplayValue);
+        btnNumbers[i].addEventListener("click", handleNumberClick);
     }
     //operators
     for (var i = 0; i < btnOperators.length; i++) {
-        btnOperators[i].addEventListener("click", storeCurrentExpression);
+        btnOperators[i].addEventListener("click", handleOperatorClick);
     }
 
     equals.onclick = performCalculation;
     clear.onclick = clearDisplay;
     decimal.onclick = insertDecimalPoint;
     clearLastEntry.onclick = deleteLastEntry;
+    document.addEventListener('keydown', handleKeyDown);
+}
+
+function handleKeyDown(e) {
+    switch (e.key) {
+        case "1":
+        case "2":
+        case "3":
+        case "4":
+        case "5":
+        case "6":
+        case "7":
+        case "8":
+        case "9":
+        case "0":
+            updateDisplayValue(e.key);
+            break;
+
+        case ".":
+            insertDecimalPoint();
+            break;
+
+        case "+":
+        case "-":
+        case "*":
+        case "/":
+            storeCurrentExpression(e.key)
+            break;
+
+        case "Enter":
+            e.preventDefault();
+        case "=":
+            performCalculation();
+            break;
+
+        case "Delete":
+            clearDisplay();
+            break;
+
+        case "Backspace":
+            deleteLastEntry();
+            break;
+
+        default:
+            break;
+    }
 }
 
 //create function to clear display
@@ -60,20 +106,23 @@ function deleteLastEntry() {
     displayValues.innerHTML = currentVal;
 }
 
-function updateDisplayValue(e) {
+function handleNumberClick(e) {
+    updateDisplayValue(e.target.innerText);
+}
+
+function updateDisplayValue(numberAsString) {
     if (currentVal.length >= maxLength) return;
-    var btnContent = e.target.innerText;
     //Create if statement inside this function that will check if the display value is currently 0 or not. 
     //If yes, set it to an empty string
     if (currentVal === "0") {
         currentVal = "";
     }
     //add the content of btnContent to currentVal
-    currentVal += btnContent;
+    currentVal += numberAsString;
     displayValues.innerText = currentVal;
 }
 
-function performCalculation(e) {
+function performCalculation() {
     entriesArr.push(currentVal);
     //with "join" the array becomes a string and  we pass it to the eval()
     var evaluateArgument = eval(entriesArr.join(" "));
@@ -86,8 +135,12 @@ function performCalculation(e) {
     entriesArr = []; //clear the array for new input
 }
 
-function storeCurrentExpression(e) {
-    var operator = e.target.value; //check content of operator
+function handleOperatorClick(e){
+    storeCurrentExpression(e.target.value);
+}
+
+function storeCurrentExpression(operator) {
+    //check content of operator
     if (operator === "") {
         return;
     }
